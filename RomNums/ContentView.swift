@@ -2,7 +2,7 @@
 //   RomNums
 //
 //   Created by: Gp. on 2/2/24 at 7:44 PM
-//     Modified:
+//     Modified: Saturday February 3, 2024 at 4:35:37 PM
 //
 //  Copyright © 2024 Delicious Studios, LLC. - Grant Perry
 //
@@ -24,87 +24,103 @@ struct ContentView: View {
 	}
 
 	var body: some View {
-			ZStack {
-				Color.white // Background color
+		ZStack {
+			Color.white // Background color
+			VStack {
+				Spacer()
 				VStack {
-					Spacer()
-					VStack {
-						Text("\nRoman Numeral")
-							.font(.title)
-							.foregroundColor(.white)
-						Text("Converter")
-							.font(.title2)
-							.foregroundColor(.white)
+					Text("\nRoman Numeral")
+						.font(.title)
+						.foregroundColor(.white)
+					Text("Converter")
+						.font(.title2)
+						.foregroundColor(.white)
+				}
+				.padding()
+				//			 .background(.blue.gradient)
+				ScrollView {
+					ZStack {
+						Color.white // Background color
+							.frame(width: 50)
+							.cornerRadius(10)
+							.padding(.horizontal) // Match the horizontal padding of the TextField
+
+						TextField("Enter Number to Convert", text: $input)
+							.onChange(of: input) { _ in
+								let convertedOutput = convertInput(input: input)
+								if convertedOutput != "D'Oh!" {
+									output = convertedOutput
+								} else {
+									output = "D'Oh!"
+								}
+							}
+						//								.ignoresSafeArea(.keyboard, edges: .bottom)
+							.padding()
+							.font(.subheadline)
+							.background(.white)
+							.textFieldStyle(PlainTextFieldStyle())
+							.foregroundColor(.black)
+							.frame(width: 200, height: 50)
+							.cornerRadius(10)
+						
 					}
 					.padding()
-					//			 .background(.blue.gradient) // Uncomment if .blue.gradient is defined
-					ScrollView {
-						ZStack {
-							Color.white // Background color
-								.frame(width: 50)
-								.cornerRadius(10) // If you want rounded corners
-								.padding(.horizontal) // Match the horizontal padding of the TextField
-
-							TextField("Enter Number to Convert", text: $input)
-								.onChange(of: input) { _ in
-									let convertedOutput = convertInput(input: input)
-									if convertedOutput != "Invalid Input" {
-										output = convertedOutput
-									} else {
-										output = "Invalid Input"
-									}
-								}
-//								.ignoresSafeArea(.keyboard, edges: .bottom)
-								.padding()
-								.font(.subheadline)
-								.background(.white)
-								.textFieldStyle(PlainTextFieldStyle())
-								.foregroundColor(.black)
-								.frame(width: 200, height: 50)
-								.cornerRadius(10) // Optional for rounded corners
-						}
-						.padding()
-
 					.cornerRadius(20)
-					//			.background(.blue.gradient)
+//								.background(.blue.gradient)
 
 					VStack {
 						VStack {
 							Text(input.isEmpty ? "" : output)
 								.padding(.top, 50)
+								.lineLimit(1)
+								.minimumScaleFactor(0.5)
 								.kerning(5)
-								.font(.system(size: 75))
-								.bold()
+								.font(.system(size: 75)).bold()
 								.foregroundColor(.white)
 								.shadow(color: .brown, radius: 10)
-								.frame(width: 900, height: 300)
-						}
-						Button(action: resetInput) {
-							Text("Reset")
-								.padding()
+								.scaledToFit()
+								.frame(width: 400, height: 300)
+							Text(output == "D'Oh!" ? "Invalid Entry - 😂" : "")
 								.foregroundColor(.white)
-								.background(.green) // .green.gradient if gradient is defined
-								.cornerRadius(10)
-								.shadow(color: .white, radius: 10)
+								.font(.system(size: 18))
+								.padding(.top, -89)
 						}
 						Spacer()
+						VStack {
+							Button(action: resetInput) {
+								Text("Reset")
+									.padding()
+									.foregroundColor(.white)
+									.background(.green) // .green.gradient if gradient is defined
+									.cornerRadius(10)
+									.shadow(color: .white, radius: 10)
+							}
+						}
+						.frame(width: 900, height: 150)
+						.padding(.top, -350)
+//						Spacer()
+
+						VStack {
+							showAddress()
+						}
+						.frame(width: 900, height: 330)
 					}
 				}
 
-					VStack {
-						Divider()
-						Text("Copyright \u{00A9} \(currentYear)\nDelicious Studios")
-							.padding()
-							.font(.system(size: 10))
-							.foregroundColor(.white)
-					}
-					.frame(width: 500, height: 65)
-					.background(Color.blue.gradient)
+				VStack {
+					Divider()
+					Text("Copyright \u{00A9} \(currentYear)\nDelicious Studios")
+						.padding()
+						.font(.system(size: 10))
+						.foregroundColor(.white)
 				}
-				.frame(width: 900, height: 900)
-				.background(Color.blue.gradient)
+				.frame(width: 500, height: 130)
+//				.background(Color.blue.gradient)
 			}
-			.preferredColorScheme(.light)
+			.frame(width: 900, height: 900)
+			.background(Color.blue.gradient)
+		}
+		.preferredColorScheme(.light)
 
 	}
 
@@ -114,16 +130,16 @@ struct ContentView: View {
 			return intToRoman(intValue)
 		} else {
 			let romanValue = romanToInt(input.uppercased())
-			return romanValue >= 0 ? String(romanValue) : "Invalid Input"
+			return romanValue >= 0 ? String(romanValue) : "D'Oh!"
 		}
 	}
 
-	private func romanToInt(_ s: String) -> Int {
+	private func romanToInt(_ inStr: String) -> Int {
 		let romanValues: [Character: Int] = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
 		var result = 0
 		var previousValue = 0
 
-		for char in s.reversed() {
+		for char in inStr.reversed() {
 			if let value = romanValues[char] {
 				if value < previousValue {
 					result -= value

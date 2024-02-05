@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1787DF2B700837009DEC9D /* ColorViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1787DE2B700837009DEC9D /* ColorViewExt.swift */; };
+		9B1787E12B700AF5009DEC9D /* ShowDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1787E02B700AF5009DEC9D /* ShowDetails.swift */; };
+		9B1787E42B7160D6009DEC9D /* cityCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1787E32B7160D6009DEC9D /* cityCoords.swift */; };
+		9B1787E62B716C33009DEC9D /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1787E52B716C33009DEC9D /* CityView.swift */; };
+		9B1787E82B716D0B009DEC9D /* CitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1787E72B716D0B009DEC9D /* CitiesListView.swift */; };
+		9B9DC5842B6FD76F00684FDB /* locationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DC5832B6FD76F00684FDB /* locationManager.swift */; };
+		9B9DC5862B6FDAC600684FDB /* getAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DC5852B6FDAC600684FDB /* getAddress.swift */; };
+		9BDFAF032B6FEEB400FA9937 /* routesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFAF022B6FEEB400FA9937 /* routesListView.swift */; };
 		E757BBBF2B6DC3E30002F2AB /* RomNumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757BBBE2B6DC3E30002F2AB /* RomNumsApp.swift */; };
 		E757BBC12B6DC3E30002F2AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757BBC02B6DC3E30002F2AB /* ContentView.swift */; };
 		E757BBC32B6DC3E40002F2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E757BBC22B6DC3E40002F2AB /* Assets.xcassets */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1787DE2B700837009DEC9D /* ColorViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewExt.swift; sourceTree = "<group>"; };
+		9B1787E02B700AF5009DEC9D /* ShowDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetails.swift; sourceTree = "<group>"; };
+		9B1787E32B7160D6009DEC9D /* cityCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityCoords.swift; sourceTree = "<group>"; };
+		9B1787E52B716C33009DEC9D /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
+		9B1787E72B716D0B009DEC9D /* CitiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListView.swift; sourceTree = "<group>"; };
+		9B9DC5832B6FD76F00684FDB /* locationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationManager.swift; sourceTree = "<group>"; };
+		9B9DC5852B6FDAC600684FDB /* getAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getAddress.swift; sourceTree = "<group>"; };
+		9BDFAF022B6FEEB400FA9937 /* routesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routesListView.swift; sourceTree = "<group>"; };
 		E757BBBB2B6DC3E30002F2AB /* RomNums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RomNums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E757BBBE2B6DC3E30002F2AB /* RomNumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomNumsApp.swift; sourceTree = "<group>"; };
 		E757BBC02B6DC3E30002F2AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,13 +87,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1787DD2B700822009DEC9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B1787DE2B700837009DEC9D /* ColorViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B1787E22B7160BD009DEC9D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B1787E32B7160D6009DEC9D /* cityCoords.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9B9DC5802B6FD73D00684FDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B9DC5852B6FDAC600684FDB /* getAddress.swift */,
+				9B1787E02B700AF5009DEC9D /* ShowDetails.swift */,
+				9B1787E52B716C33009DEC9D /* CityView.swift */,
+				9B1787E72B716D0B009DEC9D /* CitiesListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B9DC5812B6FD74500684FDB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9B9DC5832B6FD76F00684FDB /* locationManager.swift */,
+				9BDFAF022B6FEEB400FA9937 /* routesListView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9B9DC5822B6FD74B00684FDB /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		E757BBB22B6DC3E30002F2AB = {
 			isa = PBXGroup;
 			children = (
+				E757BBBC2B6DC3E30002F2AB /* Products */,
 				E757BBBD2B6DC3E30002F2AB /* RomNums */,
 				E757BBCE2B6DC3E50002F2AB /* RomNumsTests */,
 				E757BBD82B6DC3E50002F2AB /* RomNumsUITests */,
-				E757BBBC2B6DC3E30002F2AB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +153,11 @@
 		E757BBBD2B6DC3E30002F2AB /* RomNums */ = {
 			isa = PBXGroup;
 			children = (
+				9B1787E22B7160BD009DEC9D /* Data */,
+				9B1787DD2B700822009DEC9D /* Extensions */,
+				9B9DC5822B6FD74B00684FDB /* Enum */,
+				9B9DC5812B6FD74500684FDB /* Classes */,
+				9B9DC5802B6FD73D00684FDB /* Views */,
 				E757BBBE2B6DC3E30002F2AB /* RomNumsApp.swift */,
 				E757BBC02B6DC3E30002F2AB /* ContentView.swift */,
 				E757BBC22B6DC3E40002F2AB /* Assets.xcassets */,
@@ -257,8 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1787E12B700AF5009DEC9D /* ShowDetails.swift in Sources */,
+				9B1787DF2B700837009DEC9D /* ColorViewExt.swift in Sources */,
+				9BDFAF032B6FEEB400FA9937 /* routesListView.swift in Sources */,
 				E757BBC12B6DC3E30002F2AB /* ContentView.swift in Sources */,
 				E757BBBF2B6DC3E30002F2AB /* RomNumsApp.swift in Sources */,
+				9B9DC5842B6FD76F00684FDB /* locationManager.swift in Sources */,
+				9B1787E42B7160D6009DEC9D /* cityCoords.swift in Sources */,
+				9B1787E82B716D0B009DEC9D /* CitiesListView.swift in Sources */,
+				9B1787E62B716C33009DEC9D /* CityView.swift in Sources */,
+				9B9DC5862B6FDAC600684FDB /* getAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,12 +497,14 @@
 				DEVELOPMENT_TEAM = KP3ZH5K2SY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Requires to show address";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show address";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,12 +529,14 @@
 				DEVELOPMENT_TEAM = KP3ZH5K2SY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Requires to show address";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show address";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
